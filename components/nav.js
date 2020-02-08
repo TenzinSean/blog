@@ -1,56 +1,53 @@
 import React from 'react'
 import Link from 'next/link'
-
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
-}))
+import { List, ListItem, ListIcon } from "@chakra-ui/core";
+import { ThemeProvider, Box, Flex, Image, Text } from "@chakra-ui/core";
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
+  <ThemeProvider>
+    <Flex 
+      justifyContent="center"
+      alignItems="center"
+      >
+        <Box>
+          <List spacing={3}>
+            <ListItem className="item">
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </ListItem>
+              <ListItem className="item">
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </ListItem>
+              <ListItem className="item">
+                <Link href="/profile">
+                  <a>Profile</a>
+                </Link>
+              </ListItem>
+              <ListItem className="item">
+                <Link href="/contact">
+                  <a>Contact</a>
+                </Link>
+            </ListItem>
+          </List>
+          </Box>
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
+       a{
         text-decoration: none;
-        font-size: 13px;
+        display: inline-block;
+      }
+      .item{
+        list-style-type:none;
+        display: inline-block;
+      }
+      a:hover{
+        color: red;
       }
     `}</style>
-  </nav>
+    </Flex>
+    </ThemeProvider>
 )
 
 export default Nav
