@@ -37,14 +37,18 @@ const Nav = () => (
        a{
         text-decoration: none;
         display: inline-block;
+        color: white;
       }
       .item{
         list-style-type:none;
         display: inline-block;
+        overflow: hidden;
       }
       a:hover{
         color: red;
+        transition: color 500ms ease-in-out;
       }
+
     `}</style>
     </Flex>
     </ThemeProvider>

@@ -9,8 +9,14 @@ const Tit = () => (
             justifyContent="center"
             alignItems="center"
         >
-            <Heading as="h2" size="xl">TenzinSean</Heading>
+            <Heading as="h2" size="xl" className="title-one">TenzinSean</Heading>
         </Flex>
+
+        <style jsx>{`
+            .title-one{
+                
+            }
+        `}</style>
     </ThemeProvider>
 );
 

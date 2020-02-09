@@ -19,13 +19,8 @@ const Home = () => (
       </div>
     Home
     <style jsx>{`
-      body, html {
-        margin: 0;
-      }
       .bg-image{
-        padding: 0;
-        margin: 0;
-        height: 200%;
+        height: 450%;
         background-image: url("https://images.unsplash.com/photo-1580654833444-91bb7cbc5ed3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
         background-size: cover;
         background-repeat: no-repeat;
@@ -33,6 +28,13 @@ const Home = () => (
         color: white;
       }
   `}</style>
+  <style jsx global>
+   {`
+      body{
+        margin: 0;
+      }
+  `}
+  </style>
   </div>
 )
 
