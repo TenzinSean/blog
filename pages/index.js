@@ -134,6 +134,21 @@ const Home = () => (
       button{
         margin-top: 15px;
       }
+
+      @media screen and (max-width: 40em) {
+        .css-19ndbdu {
+          display: none;
+          padding: 0;
+          margin: 0;
+          font-family: 'Roboto';
+          letter-spacing: 2px;
+        }
+        .bg-image{
+          height: 400px;
+          background-size: cover;
+        }
+      }
+
   `}
   </style>
   </div>
