@@ -59,13 +59,12 @@ const Home = () => (
         <Tit/>
       </Flex>
       <Nav />
-     
         <div className="second-text">
             <Box maxW="32rem" className="second-box">
                 <Heading mb={4} as="h4" size="sm" className="head-1">TenzinSean blog time</Heading>
                 <Heading mb={4} as="h1" size="xl" className="head-2">WELCOME TO MYPAGE</Heading>
                 <Text fontSize="lg" className="text-info">
-                  Software Enginner and Passion Machine Learning Project
+                   Software Enginner and Passion Machine Learning Project
                 </Text>
                 <Button variantColor="purple" size="lg">HEAR MORE</Button>
             </Box>
@@ -80,7 +79,7 @@ const Home = () => (
                                     <Image src={pic.pi} alt={pic.name} size="300px" />
                                 </div>
                               </Box>
-                            ))}
+          ))}
       </SimpleGrid>
       </ThemeProvider>
       <Footer/>
@@ -113,40 +112,28 @@ const Home = () => (
         justify-content: center;
         text-align: center;
       }
-
       .head-1{
         font-family: 'Roboto';
         text-transform: uppercase;
         letter-spacing: 3px;
       }
-
       .head-2{
         font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;
         letter-spacing: 5px;
       }
-
       .text-info{
         font-family: 'Roboto';
         margin-bottom: 20px;
         letter-spacing: 2px;
       }
-
       button{
         margin-top: 15px;
       }
-
-      // .css-e4c0ds  + .text {
-      //   visibility: hidden;
-      // }
-
-      
-
       .css-e4c0ds:hover{
         cursor: pointer;
         transition: opacity 500ms ease-in-out;
         opacity: 0.59;
-        
       }
 
       .text:hover {

@@ -7,7 +7,7 @@ import { Heading } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
 import { ThemeProvider } from "@chakra-ui/core";
 import Footer from "./footer";
-
+import { SimpleGrid } from "@chakra-ui/core";
 
 const about = () => (
     <div>
@@ -30,7 +30,15 @@ const about = () => (
             </div>
         </div>
       </ThemeProvider>
-      About
+      <Box bg="tomato" w="100%" p={4} color="white">
+        <Flex align="center">
+        <Flex bg="blue.50" size="150px" align="center" justify="center">
+          <Text textAlign="center">
+            Coming Soon!!
+          </Text>
+        </Flex>
+        </Flex>
+      </Box>
       <Footer/>
       
   
@@ -82,7 +90,7 @@ const about = () => (
       button{
         margin-top: 15px;
       }
-      
+
       @media screen and (max-width: 40em) {
         .css-19ndbdu {
           display: none;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import Nav from '../components/nav'
 import Tit from '../components/tit';
 import { Flex } from "@chakra-ui/core"
@@ -7,6 +7,13 @@ import { Heading } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
 import { ThemeProvider } from "@chakra-ui/core";
 import Footer from "./footer";
+import Registry  from "./registry";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/core";
 
 
 const contact = () => (
@@ -29,8 +36,8 @@ const contact = () => (
               </Box>
             </div>
         </div>
+        <Registry/>
       </ThemeProvider>
-      Contact
       <Footer/>
   
     <style jsx global>
@@ -80,6 +87,22 @@ const contact = () => (
 
       button{
         margin-top: 15px;
+      }
+      @media screen and (max-width: 40em) {
+        .css-19ndbdu {
+          display: none;
+          padding: 0;
+          margin: 0;
+          font-family: 'Roboto';
+          letter-spacing: 2px;
+        }
+        .bg-image{
+          height: 400px;
+          background-size: cover;
+        }
+        .second-text{
+          display: none;
+        }
       }
   `}
   </style>
