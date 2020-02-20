@@ -8,13 +8,22 @@ const Tit = () => (
         <Flex 
             justifyContent="center"
             alignItems="center"
+            className="title-one"
         >
-            <Heading as="h2" size="xl" className="title-one">TenzinSean</Heading>
+            <Heading as="h2" size="xl">TenzinSean</Heading>
         </Flex>
 
-        <style jsx>{`
-            .title-one{
-                
+        <style jsx global>{`
+            @media screen and (max-width: 40em) {
+                .css-p5x3r9 {
+                    margin-top: 80% !important;
+                    letter-spacing: 12px;
+                }
+                .css-p5x3r9:hover {
+                    color: red;
+                    transition: color 500ms ease-in-out;
+                    cursor: pointer;
+                }
             }
         `}</style>
     </ThemeProvider>

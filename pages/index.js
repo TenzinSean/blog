@@ -70,22 +70,20 @@ const Home = () => (
                 <Button variantColor="purple" size="lg">HEAR MORE</Button>
             </Box>
           </div>
-          {/* <Box maxW="48rem" className="label-infor">
-            <Heading  as="h1" size="xl" className="head-2">WELCOME TO MYPAGE</Heading>
-          </Box> */}
       </div>
       <Content/>
       <Subscribe/>
       <SimpleGrid columns={[2, null, 5]} spacing="10px" mt="20px">
           {pics.map((pic) => (
                               <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden" key={pic.id}>
+                                <div className="cover-text">
                                     <Image src={pic.pi} alt={pic.name} size="300px" />
+                                </div>
                               </Box>
                             ))}
       </SimpleGrid>
       </ThemeProvider>
       <Footer/>
-    
   <style jsx global>
    {`
       body{
@@ -136,6 +134,23 @@ const Home = () => (
 
       button{
         margin-top: 15px;
+      }
+
+      // .css-e4c0ds  + .text {
+      //   visibility: hidden;
+      // }
+
+      
+
+      .css-e4c0ds:hover{
+        cursor: pointer;
+        transition: opacity 500ms ease-in-out;
+        opacity: 0.59;
+        
+      }
+
+      .text:hover {
+        visibility:visible;
       }
 
       @media screen and (max-width: 40em) {

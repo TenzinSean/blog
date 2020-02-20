@@ -79,8 +79,7 @@ function Nav({ statusCode }) {
               <DrawerOverlay />
               <DrawerContent>
               <DrawerCloseButton size="md" className="close-button"/>
-                <DrawerHeader borderBottomWidth="1px" color="white">Basic Drawer</DrawerHeader>
-                <DrawerBody>
+                <DrawerBody className="drawer-menu">
                   <List spacing={3} styleType="disc">
                       <ListItem className="item">
                           <Link color="teal" href="/">
@@ -106,6 +105,7 @@ function Nav({ statusCode }) {
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
+            
       <style jsx global>{`
 
       .burgerMenu {
@@ -146,11 +146,21 @@ function Nav({ statusCode }) {
         .css-1vo6j75{
           background-color: #333;
         }
+        DrawerBody > .css-cu0c08 {
+          margin-top: 40px;
+        }
         @media screen and (max-width: 40em) {
           button {
             display: none;
           }
         }
+
+        @media all and (min-width: 1024px) and (max-width: 1280px) {
+          .burgerMenu {
+            display: none;
+          }
+        }
+        
       `}</style>
       </Flex>
       </ThemeProvider>
