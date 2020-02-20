@@ -61,7 +61,7 @@ const Home = () => (
       <Nav />
      
         <div className="second-text">
-            <Box maxW="32rem">
+            <Box maxW="32rem" className="second-box">
                 <Heading mb={4} as="h4" size="sm" className="head-1">TenzinSean blog time</Heading>
                 <Heading mb={4} as="h1" size="xl" className="head-2">WELCOME TO MYPAGE</Heading>
                 <Text fontSize="lg" className="text-info">
@@ -70,6 +70,9 @@ const Home = () => (
                 <Button variantColor="purple" size="lg">HEAR MORE</Button>
             </Box>
           </div>
+          {/* <Box maxW="48rem" className="label-infor">
+            <Heading  as="h1" size="xl" className="head-2">WELCOME TO MYPAGE</Heading>
+          </Box> */}
       </div>
       <Content/>
       <Subscribe/>
@@ -146,6 +149,17 @@ const Home = () => (
         .bg-image{
           height: 400px;
           background-size: cover;
+        }
+        .second-text{
+          display: none;
+        }
+        .label-infor {
+          display: flex;
+          justify-content: center;
+        }
+        .label-infor > .head-2 {
+          margin-top: 25%;
+          letter-spacing: 0.3em;
         }
       }
 

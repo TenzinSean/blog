@@ -14,12 +14,22 @@ import {
   useDisclosure,
   Button
 } from "@chakra-ui/core";
+import { CloseButton } from "@chakra-ui/core";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // 👈
+import { Icon } from "@chakra-ui/core";
+import { MdSettings } from "react-icons/md"
+import {  GoThreeBars } from "react-icons/go";
+
+
 
 function Nav({ statusCode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
   const handlePlacementChange = event => setPlacement(event.target.value);
+  const btnRef = React.useRef();
+  const firstField = React.useRef();
+
 
   if (statusCode === 404) {
         return <Error statusCode={statusCode}/>
@@ -55,12 +65,20 @@ function Nav({ statusCode }) {
               </ListItem>
             </List>
             </Box>
-            <Button onClick={onOpen} className="drawer-items" >
-              <FontAwesomeIcon icon="user" />
-            </Button>
-            <Drawer placement={placement} onClose={onClose} isOpen={isOpen} class="drawer">
+            <div className="burgerMenu" onClick={onOpen}>
+              <div></div>
+              <div></div>
+              <div></div>
+             {/* <GoThreeBars size="32px" onClick={onOpen}/> */}
+             </div>
+            <Drawer placement={placement} 
+                    onClose={onClose} 
+                    isOpen={isOpen}
+                    className="drawer"
+            >
               <DrawerOverlay />
               <DrawerContent>
+              <DrawerCloseButton size="md" className="close-button"/>
                 <DrawerHeader borderBottomWidth="1px" color="white">Basic Drawer</DrawerHeader>
                 <DrawerBody>
                   <List spacing={3} styleType="disc">
@@ -89,7 +107,30 @@ function Nav({ statusCode }) {
               </DrawerContent>
             </Drawer>
       <style jsx global>{`
-        a{
+
+      .burgerMenu {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+      }
+
+      .burgerMenu > div {
+        width: 35px;
+        height: 4px;
+        background-color: white;
+        margin: 6px 0;
+      }
+      .css-1vo6j75 {
+          background-color: black !important;
+          font-color: white;
+          font-family: 'Roboto';
+        }
+
+        .close-button{
+          border: none;
+        }
+        
+         a{
           text-decoration: none;
           display: inline-flex;
           color: white;
@@ -97,44 +138,23 @@ function Nav({ statusCode }) {
         .item{
           list-style-type:none;
           overflow: hidden;
-
         }
         a:hover{
           color: #6B46C1;
           transition: color 500ms ease-in-out;
         }
-
         .css-1vo6j75{
           background-color: #333;
         }
-
         @media screen and (max-width: 40em) {
           button {
             display: none;
           }
         }
-
-
       `}</style>
       </Flex>
       </ThemeProvider>
   );
 }
-
-
-// function getInitialProps({ query, res }) {
-// 	const { id } = query;
-// 	const user = users.find((u) => u.id == id);
-// 	if (!user) {
-// 		res.statusCode = 404;
-// 	}
-// 	return {
-// 		user: user || {},
-// 		statusCode: user ? 200 : 404,
-// 	};
-// }
-
-// Nav.getInitialProps = getInitialProps;
-
 
 export default Nav
